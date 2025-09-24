@@ -4,19 +4,19 @@
 class batsman
 {
 public:
-    string name;
-    int lineupNo;
-    int runs;
-    int balls;
-    int fours;
-    int sixes;
-    bool inToBat;
-    bool out;
-    bool runout;
+    string name = "";
+    int lineupNo = 0;
+    int runs = 0;
+    int balls = 0;
+    int fours = 0;
+    int sixes = 0;
+    bool inToBat = false;
+    bool out = false;
+    bool runout = false;
 
-    string outbowler;
+    string outbowler = "";
     batsman* next;
-
+    
     batsman();
     ~batsman();
     double strike_rate();

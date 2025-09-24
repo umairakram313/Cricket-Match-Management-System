@@ -3,19 +3,19 @@
 class bowler
 {
 public:
-    string name;
-    int lineUpNo;
-    int balls;
-    int overs;
-    int runs;
-    int wickets;
-    int dots;
-    int fours;
-    int sixes;
-    int wides;
-    int noballs;
-    bool bowled;
-    bowler* next;
+    string name = "";
+    int lineUpNo = 0;
+    int balls = 0;
+    int overs = 0;
+    int runs = 0;
+    int wickets = 0;
+    int dots = 0;
+    int fours = 0;
+    int sixes = 0;
+    int wides = 0;
+    int noballs = 0;
+    bool bowled = false;
+    bowler* next = 0;
     bowler();
     ~bowler();
     float economy();

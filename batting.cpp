@@ -1,19 +1,5 @@
 #include "batting.h"
 
-
-string name = "";
-int lineupNo = 0;
-int runs = 0;
-int balls = 0;
-int fours = 0;
-int sixes = 0;
-bool inToBat = false;
-bool out = false;
-bool runout = false;
-
-string outbowler = "";
-batsman* next;
-
 batsman::batsman()
 {
     next = NULL;
@@ -36,11 +22,6 @@ double batsman::strike_rate()
         }
 }
 
-
-
-batsman* strike;
-batsman* nonstrike;
-batsman* head;
 batsmanLineup::batsmanLineup()
 {
     strike = NULL;
