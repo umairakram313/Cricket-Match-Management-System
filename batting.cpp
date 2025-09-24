@@ -1,8 +1,6 @@
 #include "batting.h"
 
-class batsman
-{
-public:
+
     string name = "";
     int lineupNo = 0;
     int runs = 0;
@@ -16,16 +14,16 @@ public:
     string outbowler = "";
     batsman* next;
 
-    batsman()
+    batsman::batsman()
     {
         next = NULL;
 
     }
-    ~batsman()
+    batsman::~batsman()
     {
         delete next;
     }
-    double strike_rate() {
+    batsman::double strike_rate() {
 
         if (runs == 0 && balls == 0)
         {
@@ -39,31 +37,27 @@ public:
         }
     }
 
-};
 
 
-class batsmanLineup
-{
-public:
     batsman* strike;
     batsman* nonstrike;
     batsman* head;
 
-    batsmanLineup()
+    batsmanLineup::batsmanLineup()
     {
         strike = NULL;
         nonstrike = NULL;
         head = NULL;
     }
 
-    ~batsmanLineup()
+    batsmanLineup::~batsmanLineup()
     {
         delete strike;
         delete nonstrike;
         delete head;
     }
 
-    void Loadbatsman(string bat)
+    void batsmanLineup::Loadbatsman(string bat)
     {
         batsman* ptr = new batsman;
         if (head == NULL)
@@ -88,7 +82,7 @@ public:
         }
         ptr->name = bat;
     }
-    void openers()
+    void batsmanLineup::openers()
     {
         int s;
         batsman* search = head;
@@ -169,11 +163,11 @@ public:
 
 
     }
-    void dotball()
+    void batsmanLineup::dotball()
     {
         strike->balls++;
     }
-    void runs(int r)
+    void batsmanLineup::runs(int r)
     {
         strike->balls++;
         strike->runs += r;
@@ -193,7 +187,7 @@ public:
         }
     }
 
-    void wicket(string name)
+    void batsmanLineup::wicket(string name)
     {
         int noOfnotouts = 0;
         batsman* check = head;
@@ -279,7 +273,7 @@ public:
     }
 
 
-    void runout(bool notaWideBall, int r)
+    void batsmanLineup::runout(bool notaWideBall, int r)
     {
 
 
@@ -422,13 +416,13 @@ public:
         }
     }
 
-    void changeStrike()
+    void batsmanLineup::changeStrike()
     {
         batsman* temp = strike;
         strike = nonstrike;
         nonstrike = temp;
     }
-    void batting_scorecard()
+    void batsmanLineup::batting_scorecard()
     {
         cout << "Batting " << endl;
         cout << "---------------------------------------------------------------------------------" << endl;
@@ -471,5 +465,4 @@ public:
         cout << "---------------------------------------------------------------------------------" << endl;
     }
 
-};
 
