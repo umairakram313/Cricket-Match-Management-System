@@ -1,1 +1,1 @@
-g++ scoringApp.cpp batting.cpp innings.cpp bowling.cpp impfiles.cpp -o scoringApp
+g++ -Iinclude scoringApp.cpp src/batting.cpp src/innings.cpp src/bowling.cpp src/impfiles.cpp -o scoringApp
