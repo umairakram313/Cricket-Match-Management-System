@@ -16,7 +16,6 @@ string secondbat = "";
 string winstate;
 
 
-
 class ball
 {
 public:
